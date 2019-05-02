@@ -37,9 +37,8 @@ const siteContent = {
   },
 };
 
-// Example: Update the img src for the logo
 
-// Beginning of my code Images
+// Img
 
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
@@ -50,42 +49,74 @@ headerImg.setAttribute('src', siteContent['cta']['img-src']);
 const contentImg = document.getElementById('middle-img');
 contentImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
 
-
-// Nav Bar
+// Nav
 
 const navBar = document.querySelectorAll('a');
 const headerNav = document.querySelector('header nav');
 const aTagColor = Array.from(document.querySelectorAll('header nav a'));
 
 for (let i = 0; i < navBar.length; i++) {
-  navBar[i].textContent = siteContent.nav[`nav-item-${i + 1}`]; 
+  navBar[i].textContent = siteContent.nav[`nav-item-${i + 1}`];
 }
 
 const main = document.createElement('a');
-main.href = '#';
+main.href ='#';
 main.textContent = 'Main';
-main.headerNav.prepend(main);
+headerNav.prepend(main);
 
 const media = document.createElement('a');
-media.href = '#';
+media.href ='#';
 media.textContent = 'Media';
 headerNav.appendChild(media);
 
 aTagColor.push(main);
 aTagColor.push(media);
 
-for(let i = 0; i < aTagColor.length; i++) {
+for (let i = 0; i< aTagColor.length; i++) {
   aTagColor[i].style.color = 'green';
 }
 
 // Header
 
+const mainHeader = document.querySelector('h1');
+// mainHeader.textContent = siteContent.cta.h1;
+mainHeader.innerHTML = siteContent.cta.h1.split(' ').join('<br>');
+
+const headerButton = document.querySelectorAll('.cta-text');
+headerButton[0].getElementsByTagName('button')[0].textContent = siteContent.cta.button;
+
 
 // Main Content
 
+const txtContent = document.querySelectorAll('.text-content');
+txtContent[0].getElementsByTagName('h4')[0].textContent = siteContent['main-content']['features-h4'];
+txtContent[0].getElementsByTagName('p')[0].textContent = siteContent['main-content']['features-content'];
 
-//Contact
+txtContent[1].getElementsByTagName('h4')[0].textContent = siteContent['main-content']['about-h4'];
+txtContent[1].getElementsByTagName('p')[0].textContent = siteContent['main-content']['about-content'];
+
+txtContent[2].getElementsByTagName('h4')[0].textContent = siteContent['main-content']['services-h4'];
+txtContent[2].getElementsByTagName('p')[0].textContent = siteContent['main-content']['services-content'];
+
+txtContent[3].getElementsByTagName('h4')[0].textContent = siteContent['main-content']['product-h4'];
+txtContent[3].getElementsByTagName('p')[0].textContent = siteContent['main-content']['product-content'];
+
+txtContent[4].getElementsByTagName('h4')[0].textContent = siteContent['main-content']['vision-h4'];
+txtContent[4].getElementsByTagName('p')[0].textContent = siteContent['main-content']['vision-content'];
 
 
-//Footer
+// Contact
+
+const contact  = document.querySelectorAll('.contact');
+contact[0].getElementsByTagName('h4')[0].textContent = siteContent['contact']['contact-h4'];
+contact[0].getElementsByTagName('p')[0].textContent = siteContent['contact']['address'];
+contact[0].getElementsByTagName('p')[1].textContent = siteContent['contact']['phone'];
+contact[0].getElementsByTagName('p')[2].textContent = siteContent['contact']['email'];
+
+
+// Footer
+
+const footer = document.querySelectorAll('footer');
+footer[0].getElementsByTagName('p')[0].textContent = siteContent['footer']['copyright'];
+
 
